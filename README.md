@@ -33,15 +33,19 @@ el contenedor principal en donde se aloja toda la codificación además del serv
 
 1. levantar contenedores docker 
    ```bash
-    docker-compose up -d --build
+    docker-compose build --no-cache
+    docker-compose up -d
     ```
+   **Nota:** una vez los contenedores estén activos el servicio:
+   * mysql para acceso desde máquina local debe realizarse por el puerto 3307
+   * web para acceso debe realizarse por el puerto 8085 ej. http://localhost:8085/dashboard
 2. acceder al contenedor del proyecto para correr las migraciones y descargar dependencias
     ```bash
        # verificación de contenedores activos para ingresar por el nombre al contenedor del app
        docker ps
        
-       # Acceder al contenedor por el nombre en mi caso el nombre del contenedor corresponde a konecta-interview.test-1
-       docker exec -it  konecta-interview.test-1 bash
+       # Acceder al contenedor por el nombre del contenedor
+       docker exec -it  konecta-interview-laravel.test-1 bash
     ```
 
 ### Descargue de dependencias
@@ -67,10 +71,10 @@ el contenedor principal en donde se aloja toda la codificación además del serv
 
 ## Módulos del proyecto
 
-1. [Registro de usuario](http://www.localhost/register)
-2. [Inicio de sesión](http://www.localhost/login)
-3. [Dashboard](http://www.localhost/dashboard) en donde se aprecian los puntos:
+1. [Registro de usuario](http://www.localhost:8085/register)
+2. [Inicio de sesión](http://www.localhost:8085/login)
+3. [Dashboard](http://www.localhost:8085/dashboard) en donde se aprecian los puntos:
    * _Realizar una consulta que permita conocer cuál es el producto que más stock tiene._
    * _Realizar una consulta que permita conocer cuál es el producto más vendido._
-4. [Administrador de Productos](http://www.localhost/products)
-5. [Módulo de ventas](http://www.localhost/sales)
+4. [Administrador de Productos](http://www.localhost:8085/products)
+5. [Módulo de ventas](http://www.localhost:8085/sales)
