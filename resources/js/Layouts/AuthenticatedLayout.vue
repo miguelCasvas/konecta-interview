@@ -40,10 +40,6 @@ const showingNavigationDropdown = ref(false);
                                     Inicio
                                 </NavLink>
 
-                                <NavLink :href="route('chirps.index')" :active="route().current('chirps.index')">
-                                    Chirps
-                                </NavLink>
-
                                 <NavLink :href="route('products.index')" :active="route().current('products.index')">
                                     <svg class="w-6 h-6 dash-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
                                     Productos
@@ -135,10 +131,6 @@ const showingNavigationDropdown = ref(false);
                     <div class="pt-2 pb-3 space-y-1">
                         <ResponsiveNavLink :href="route('dashboard')" :active="route().current('dashboard')">
                             Inicio
-                        </ResponsiveNavLink>
-
-                        <ResponsiveNavLink :href="route('chirps.index')" :active="route().current('chirps.index')">
-                            Chirps
                         </ResponsiveNavLink>
 
                         <ResponsiveNavLink :href="route('products.index')" :active="route().current('products.index')">

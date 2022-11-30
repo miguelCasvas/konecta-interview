@@ -28,12 +28,12 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'name' => 'required',
-            'reference' => 'required',
-            'price' => 'required',
-            'weight' => 'required',
-            'category' => 'required',
-            'stock' => 'required',
+            'name' => 'required|max:100',
+            'reference' => 'required|max:100',
+            'price' => 'required|numeric',
+            'weight' => 'required|numeric',
+            'category' => 'required|max:100',
+            'stock' => 'required|numeric',
         ]);
 
         Product::create($validated);
@@ -49,12 +49,12 @@ class ProductController extends Controller
     public function update(Request $request, Product $product)
     {
         $validated = $request->validate([
-            'name' => 'required',
-            'reference' => 'required',
-            'price' => 'required',
-            'weight' => 'required',
-            'category' => 'required',
-            'stock' => 'required',
+            'name' => 'required|max:100',
+            'reference' => 'required|max:100',
+            'price' => 'required|numeric',
+            'weight' => 'required|numeric',
+            'category' => 'required|max:100',
+            'stock' => 'required|numeric',
         ]);
 
         $product->update($validated);
