@@ -48,6 +48,11 @@ const showingNavigationDropdown = ref(false);
                                     <svg class="w-6 h-6 dash-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
                                     Productos
                                 </NavLink>
+
+                                <NavLink :href="route('sales.index')" :active="route().current('sales.index')">
+                                    <svg class="w-6 h-6 dash-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 14l6-6m-5.5.5h.01m4.99 5h.01M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16l3.5-2 3.5 2 3.5-2 3.5 2zM10 8.5a.5.5 0 11-1 0 .5.5 0 011 0zm5 5a.5.5 0 11-1 0 .5.5 0 011 0z"></path></svg>
+                                    Ventas
+                                </NavLink>
                             </div>
                         </div>
 
@@ -138,6 +143,10 @@ const showingNavigationDropdown = ref(false);
 
                         <ResponsiveNavLink :href="route('products.index')" :active="route().current('products.index')">
                             Productos
+                        </ResponsiveNavLink>
+
+                        <ResponsiveNavLink :href="route('sales.index')" :active="route().current('sales.index')">
+                            Ventas
                         </ResponsiveNavLink>
                     </div>
 

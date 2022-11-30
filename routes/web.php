@@ -1,6 +1,12 @@
 <?php
 
+use App\Http\Controllers\ChirpController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ProductsSaleController;
+use App\Http\Controllers\ProfileController;
+use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
+use Inertia\Inertia;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,11 +28,19 @@ Route::get('/', function () {
     ]);
 });
 
+Route::resource('chirps', ChirpController::class)
+    ->only(['index', 'store', 'update', 'destroy'])
+    ->middleware(['auth', 'verified']);
+
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::resource('products', ProductController::class)
+    ->only(['index', 'store', 'update', 'destroy'])
+    ->middleware(['auth', 'verified']);
+
+Route::resource('sales', ProductsSaleController::class)
     ->only(['index', 'store', 'update', 'destroy'])
     ->middleware(['auth', 'verified']);
 
